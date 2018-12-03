@@ -21,7 +21,24 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "List of Artists"
+        if delegate == "artist" {
+            title = "List of Artists"
+        }
+        else if delegate == "photographer" {
+            title = "List of Photographers"
+        }
+        else if delegate == "videographer" {
+            title = "List of Videographers"
+        }
+        else if delegate == "tutor" {
+            title = "List of Tutors"
+        }
+        else if delegate == "programmer" {
+            title =  "List of Programmers"
+        }
+        else if delegate == "other" {
+            title = "List of Others"
+        }
         view.backgroundColor = .white
 //        let person1 = Person(id: "ksg73", name: "Katie", skill: ["Photographer", "Tutor"])
 //        let person2 = Person(id: "cjw322", name: "Cora", skill: ["Photographer", "Artist"])
