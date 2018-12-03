@@ -69,9 +69,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return categoriesArray.count
     }
     
-    // MARK: - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        categoriesArray.remove(at: indexPath.item)
         let category = categoriesArray[indexPath.item]
         let listViewController = ListViewController()
         listViewController.delegate = category.imageName // the delegate being passed is the image name
@@ -83,7 +81,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.reloadData()
     }
     
-    //     MARK: - UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.frame.width - padding) / 2.0
         return CGSize(width: width, height: width)

@@ -127,6 +127,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                         }
                     }
                 }
+                else if services == "other"{
+                    NetworkManager.getOthers(){ (other) in
+                        self.people = other
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
                 print("searched")
                 print(self.people)
             }

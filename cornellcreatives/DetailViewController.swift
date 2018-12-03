@@ -7,22 +7,16 @@
 //
 
 import UIKit
-//
-//protocol ViewControllerDelegate: class{
-//    var person: Person {get}
-//}
 
 class DetailViewController: UIViewController {
     
     var person: Person!
     var indexPath: IndexPath!
-//    var ViewControllerDelegate: ViewControllerDelegate!
-    
-    var profileImage: UIImage!
+
+    var profileImage: UIImageView!
     var nameLabel: UILabel!
     var skillLabel: UILabel!
-    
-//    var delegate: Person?
+    var emailLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,42 +26,69 @@ class DetailViewController: UIViewController {
         
         nameLabel = UILabel()
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.text = "Name: \(person.name)"
+        nameLabel.text = person.name
         nameLabel.textColor = .black
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 40)
         view.addSubview(nameLabel)
         
         skillLabel = UILabel()
         skillLabel.translatesAutoresizingMaskIntoConstraints = false
-        skillLabel.text = "Skill: \(person.services)"
+        skillLabel.text = "Skills: \(person.services.joined(separator: ", "))"
         skillLabel.textColor = .black
+        skillLabel.font = UIFont.systemFont(ofSize: 20)
         view.addSubview(skillLabel)
         
+        emailLabel = UILabel()
+        emailLabel.translatesAutoresizingMaskIntoConstraints = false
+        emailLabel.text = "Email: \(person.netid)@cornell.edu"
+        emailLabel.textColor = .black
+        emailLabel.font = UIFont.systemFont(ofSize: 20)
+        view.addSubview(emailLabel)
+        
+        profileImage = UIImageView()
+        profileImage.translatesAutoresizingMaskIntoConstraints = false
+        if person.name == "Dani Zeller" {
+            profileImage.image = UIImage(named: "dani")
+        }
+        else if person.name == "Yuet Ming Leung" {
+            profileImage.image = UIImage(named: "attilus")
+        }
+        else if person.name == "Jia Junn Ang" {
+            profileImage.image = UIImage(named: "jj")
+        }
+        else {
+            profileImage.image = UIImage(named: "profile")
+        }
+        profileImage.contentMode = .scaleAspectFit
+        view.addSubview(profileImage)
+        
         setUpConstraints()
-        // Do any additional setup after loading the view.
     }
     
     func setUpConstraints(){
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
+            profileImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
+            profileImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            profileImage.heightAnchor.constraint(equalToConstant: 350),
+            profileImage.widthAnchor.constraint(equalToConstant: 350)
+            ])
+        
+        NSLayoutConstraint.activate([
+            nameLabel.topAnchor.constraint(equalTo: profileImage.bottomAnchor, constant: 24),
             nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            nameLabel.heightAnchor.constraint(equalToConstant: 16)
+            nameLabel.heightAnchor.constraint(equalToConstant: 48)
             ])
         
         NSLayoutConstraint.activate([
             skillLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
             skillLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            skillLabel.heightAnchor.constraint(equalToConstant: 16)
+            skillLabel.heightAnchor.constraint(equalToConstant: 24)
+            ])
+        
+        NSLayoutConstraint.activate([
+            emailLabel.topAnchor.constraint(equalTo: skillLabel.bottomAnchor, constant: 10),
+            emailLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            emailLabel.heightAnchor.constraint(equalToConstant: 24)
             ])
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
