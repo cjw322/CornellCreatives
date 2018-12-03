@@ -7,11 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29934F6F5BEE1426C7AF2423 /* Pods_cornellcreatives.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B1E5173A2E7EB6DDFE8459 /* Pods_cornellcreatives.framework */; };
 		8DD17E6E21ACA18C000370C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD17E6D21ACA18C000370C8 /* AppDelegate.swift */; };
 		8DD17E7021ACA18C000370C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD17E6F21ACA18C000370C8 /* ViewController.swift */; };
 		8DD17E7321ACA18C000370C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DD17E7121ACA18C000370C8 /* Main.storyboard */; };
 		8DD17E7521ACA18E000370C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DD17E7421ACA18E000370C8 /* Assets.xcassets */; };
 		8DD17E7821ACA18E000370C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DD17E7621ACA18E000370C8 /* LaunchScreen.storyboard */; };
+		8DD17E8021ACA3A4000370C8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD17E7F21ACA3A4000370C8 /* Category.swift */; };
+		8DD17E8221ACA5CC000370C8 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD17E8121ACA5CC000370C8 /* PhotoCollectionViewCell.swift */; };
+		8DD17E8421ACAD7F000370C8 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD17E8321ACAD7F000370C8 /* ListViewController.swift */; };
+		8DD17E8621ACAE06000370C8 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD17E8521ACAE06000370C8 /* Person.swift */; };
+		8DD17E8821ACB346000370C8 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD17E8721ACB346000370C8 /* ListTableViewCell.swift */; };
+		8DD17E8A21B0A32C000370C8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD17E8921B0A32C000370C8 /* DetailViewController.swift */; };
+		CEE9AAFE21B3C776007E9405 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9AAFD21B3C776007E9405 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +30,16 @@
 		8DD17E7421ACA18E000370C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DD17E7721ACA18E000370C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DD17E7921ACA18E000370C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DD17E7F21ACA3A4000370C8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		8DD17E8121ACA5CC000370C8 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		8DD17E8321ACAD7F000370C8 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		8DD17E8521ACAE06000370C8 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		8DD17E8721ACB346000370C8 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		8DD17E8921B0A32C000370C8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A681D3A7BD4D66C86AE1623F /* Pods-cornellcreatives.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cornellcreatives.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cornellcreatives/Pods-cornellcreatives.debug.xcconfig"; sourceTree = "<group>"; };
+		A6B1E5173A2E7EB6DDFE8459 /* Pods_cornellcreatives.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cornellcreatives.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3808443A48CF37A6F7A875E /* Pods-cornellcreatives.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cornellcreatives.release.xcconfig"; path = "Pods/Target Support Files/Pods-cornellcreatives/Pods-cornellcreatives.release.xcconfig"; sourceTree = "<group>"; };
+		CEE9AAFD21B3C776007E9405 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +47,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29934F6F5BEE1426C7AF2423 /* Pods_cornellcreatives.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		557BB737EE62239B45A3FDB6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A681D3A7BD4D66C86AE1623F /* Pods-cornellcreatives.debug.xcconfig */,
+				B3808443A48CF37A6F7A875E /* Pods-cornellcreatives.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8DD17E6121ACA18C000370C8 = {
 			isa = PBXGroup;
 			children = (
 				8DD17E6C21ACA18C000370C8 /* cornellcreatives */,
 				8DD17E6B21ACA18C000370C8 /* Products */,
+				557BB737EE62239B45A3FDB6 /* Pods */,
+				91262DAA493B2E542D6CA936 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,7 +84,14 @@
 		8DD17E6C21ACA18C000370C8 /* cornellcreatives */ = {
 			isa = PBXGroup;
 			children = (
+				8DD17E8921B0A32C000370C8 /* DetailViewController.swift */,
 				8DD17E6D21ACA18C000370C8 /* AppDelegate.swift */,
+				8DD17E7F21ACA3A4000370C8 /* Category.swift */,
+				8DD17E8121ACA5CC000370C8 /* PhotoCollectionViewCell.swift */,
+				8DD17E8321ACAD7F000370C8 /* ListViewController.swift */,
+				8DD17E8521ACAE06000370C8 /* Person.swift */,
+				CEE9AAFD21B3C776007E9405 /* NetworkManager.swift */,
+				8DD17E8721ACB346000370C8 /* ListTableViewCell.swift */,
 				8DD17E6F21ACA18C000370C8 /* ViewController.swift */,
 				8DD17E7121ACA18C000370C8 /* Main.storyboard */,
 				8DD17E7421ACA18E000370C8 /* Assets.xcassets */,
@@ -64,6 +101,14 @@
 			path = cornellcreatives;
 			sourceTree = "<group>";
 		};
+		91262DAA493B2E542D6CA936 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6B1E5173A2E7EB6DDFE8459 /* Pods_cornellcreatives.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DD17E7C21ACA18E000370C8 /* Build configuration list for PBXNativeTarget "cornellcreatives" */;
 			buildPhases = (
+				98C8E374298CDFBB2B9A666D /* [CP] Check Pods Manifest.lock */,
 				8DD17E6621ACA18C000370C8 /* Sources */,
 				8DD17E6721ACA18C000370C8 /* Frameworks */,
 				8DD17E6821ACA18C000370C8 /* Resources */,
+				B9715BF2C64032AE34A9EC16 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +177,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		98C8E374298CDFBB2B9A666D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cornellcreatives-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9715BF2C64032AE34A9EC16 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-cornellcreatives/Pods-cornellcreatives-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cornellcreatives/Pods-cornellcreatives-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8DD17E6621ACA18C000370C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE9AAFE21B3C776007E9405 /* NetworkManager.swift in Sources */,
+				8DD17E8821ACB346000370C8 /* ListTableViewCell.swift in Sources */,
+				8DD17E8621ACAE06000370C8 /* Person.swift in Sources */,
 				8DD17E7021ACA18C000370C8 /* ViewController.swift in Sources */,
+				8DD17E8221ACA5CC000370C8 /* PhotoCollectionViewCell.swift in Sources */,
 				8DD17E6E21ACA18C000370C8 /* AppDelegate.swift in Sources */,
+				8DD17E8421ACAD7F000370C8 /* ListViewController.swift in Sources */,
+				8DD17E8021ACA3A4000370C8 /* Category.swift in Sources */,
+				8DD17E8A21B0A32C000370C8 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +381,7 @@
 		};
 		8DD17E7D21ACA18E000370C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A681D3A7BD4D66C86AE1623F /* Pods-cornellcreatives.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +399,7 @@
 		};
 		8DD17E7E21ACA18E000370C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3808443A48CF37A6F7A875E /* Pods-cornellcreatives.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,6 @@
+framework module Pods_cornellcreatives {
+  umbrella header "Pods-cornellcreatives-umbrella.h"
+
+  export *
+  module * { export * }
+}
