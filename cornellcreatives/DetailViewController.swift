@@ -38,7 +38,7 @@ class DetailViewController: UIViewController {
         
         skillLabel = UILabel()
         skillLabel.translatesAutoresizingMaskIntoConstraints = false
-        skillLabel.text = "Skill: \(person.skill)"
+        skillLabel.text = "Skill: \(person.services)"
         skillLabel.textColor = .black
         view.addSubview(skillLabel)
         

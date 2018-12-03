@@ -9,14 +9,14 @@
 import Foundation
 
 struct Person: Codable  {
-    var id: String
+    var netid: String
     var name: String
-    var skill: [String]
+    var services: [String]
     
-    init(id: String, name: String, skill: [String]) {
-        self.id = id
+    init(netid: String, name: String, services: [String]) {
+        self.netid = netid
         self.name = name
-        self.skill = skill
+        self.services = services
     }
 }
 

@@ -55,44 +55,61 @@ class NetworkManager {
         }
     }
     
-    static func getArtists(fromSkills skills: [String], _ didGetPeople: @escaping ([Person]) -> Void){
-        let parameters: [String: Any] = [
-            "services": ["artist"]
-        ]
-        Alamofire.request(artistsEndpoint, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: [:]).validate().responseData {(response) in
-            switch response.result {
-            case .success(let users):
-                if let json = try? JSONSerialization.jsonObject(with: users, options: .allowFragments) {
+    static func getArtists(completion: @escaping ([Person]) -> Void) {
+        Alamofire.request(artistsEndpoint, method: .get).validate().responseData { (response) in
+            switch response.result{
+            case .success(let data):
+                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments){
                     print(json)
                 }
-                
-                let jsonDecoder = JSONDecoder()
-                if let personResponse = try? jsonDecoder.decode(PersonResponse.self, from: users) {
-                    print("users \(personResponse.users)")
-                    didGetPeople(personResponse.users)
-                } else {
-                    print("Invalid Repsonse Data")
+                let decoder = JSONDecoder()
+                if let personResponse = try? decoder.decode(PersonResponse.self, from: data){
+                    completion(personResponse.users)
                 }
-                
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
-//        Alamofire.request(artistsEndpoint, method: .get).validate().responseData { (response) in
-//            switch response.result{
-//            case .success(let data):
-//                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments){
+    }
+    
+//    static func getArtists(fromSkills skills: [String], _ didGetPeople: @escaping ([Person]) -> Void){
+//        let parameters: [String: Any] = [
+//            "services": ["artist"]
+//        ]
+//        Alamofire.request(artistsEndpoint, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: [:]).validate().responseData {(response) in
+//            switch response.result {
+//            case .success(let users):
+//                if let json = try? JSONSerialization.jsonObject(with: users, options: .allowFragments) {
 //                    print(json)
 //                }
-//                let decoder = JSONDecoder()
-//                if let personResponse = try? decoder.decode(PersonResponse.self, from: data){
-//                    completion(personResponse.users)
+//
+//                let jsonDecoder = JSONDecoder()
+//                if let personResponse = try? jsonDecoder.decode(PersonResponse.self, from: users) {
+//                    print("users \(personResponse.users)")
+//                    didGetPeople(personResponse.users)
+//                } else {
+//                    print("Invalid Repsonse Data")
 //                }
+//
 //            case .failure(let error):
 //                print(error.localizedDescription)
 //            }
 //        }
-    }
+////        Alamofire.request(artistsEndpoint, method: .get).validate().responseData { (response) in
+////            switch response.result{
+////            case .success(let data):
+////                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments){
+////                    print(json)
+////                }
+////                let decoder = JSONDecoder()
+////                if let personResponse = try? decoder.decode(PersonResponse.self, from: data){
+////                    completion(personResponse.users)
+////                }
+////            case .failure(let error):
+////                print(error.localizedDescription)
+////            }
+////        }
+//    }
     
     
     

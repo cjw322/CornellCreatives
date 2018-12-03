@@ -61,10 +61,10 @@ class ListTableViewCell: UITableViewCell {
     }
     
     func configure(for people: Person) {
-        idLabel.text = people.id
+        idLabel.text = people.netid
         nameLabel.text = people.name
 //        skillLabel.text += people.skill
-        let skillString = people.skill.description
+        let skillString = people.services.description
         skillLabel.text = skillString
 //        if let skillText = skillLabel.text {
 //            skillLabel.text = "\(skillText)\(skillString)"

@@ -81,29 +81,53 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func updateSearchResults() {
-        if let skill = delegate {
-            if !skill.isEmpty {
+        if let services = delegate {
+            if !services.isEmpty {
                 // TODO: Make a request to the Recipe Puppy API using a
                 // title and then update the table view with the updated [Recipe]
                 // that you get after you decode the response
                 // Hint: The searchText is the title.
-                if skill == "photographer" {
+                if services == "photographer" {
                     NetworkManager.getPhotographers() { (photographers) in
                         self.people = photographers
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
-                            }
                         }
+                    }
                 }
-                else if skill == "artist"{
-                    NetworkManager.getArtists(fromSkills: ["artist"]) { (artists) in
+                else if services == "videographer"{
+                    NetworkManager.getVideographers(){ (videographers) in
+                        self.people = videographers
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+                else if services == "artist"{
+                    NetworkManager.getArtists(){ (artists) in
                         self.people = artists
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }
                     }
                 }
-                    print("searched")
+                else if services == "tutor"{
+                    NetworkManager.getTutors(){ (tutors) in
+                        self.people = tutors
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+                else if services == "programmer"{
+                    NetworkManager.getProgrammers(){ (programmers) in
+                        self.people = programmers
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+                print("searched")
                 print(self.people)
             }
             else {
